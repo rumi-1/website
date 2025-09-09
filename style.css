@@ -24,6 +24,37 @@ header, footer {
   text-align: center;
 }
 
+h2 {
+  text-align: center;       /* centers the text */
+  font-size: 1.5rem;       /* slightly smaller than h1 */
+  font-weight: 600;         /* moderate weight */
+  margin: 1.5rem 0 1rem;   /* space above and below */
+  color: #222;              /* subtle dark color */
+}
+h3 {
+  text-align: left;       /* centers the text */
+  font-size: 1rem;       /* slightly smaller than h1 */
+  font-weight: 600;         /* moderate weight */
+  margin: 1.5rem 0 1rem;
+  text-indent: 200px;   /* space above and below */
+  color: #222;              /* subtle dark color */
+}
+
+.centered-list {
+  list-style-position: inside;  /* bullet stays with text */
+  padding-left: 0;              /* remove default padding */
+  margin: 0 auto 1.5rem auto;   /* center the whole block */
+  text-align: left;             /* keep bullets aligned neatly */
+  display: table;               /* shrink-wrap width so margin auto works */
+}
+
+
+.centered-list li {
+  line-height: 1.6;
+  color: #111;
+}
+
+
 p {
   text-align: center;
 }
