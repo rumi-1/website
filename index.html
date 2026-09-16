@@ -3,26 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Minimal Site</title>
+  <title>Zayd Yusufi</title>
+  <meta name="description" content="Zayd Yusufi — Electrical & Computer Engineering student at CU Boulder focused on Linux systems, cloud infrastructure, and automation.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply saved theme before first paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Hello, I’m Rumi</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+
+  <!-- Girih-inspired eight-point star motif, reused as divider + decoration -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="star8" viewBox="0 0 100 100">
+        <path d="M50 4 L61 30 L88 18 L76 45 L100 50 L76 55 L88 82 L61 70 L50 96 L39 70 L12 82 L24 55 L0 50 L24 45 L12 18 L39 30 Z"
+              fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M50 22 L58 42 L78 50 L58 58 L50 78 L42 58 L22 50 L42 42 Z"
+              fill="currentColor" opacity=".55"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="border-top" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="brand">
+        <svg class="brand-star" aria-hidden="true"><use href="#star8"/></svg>
+        <span>Zayd Yusufi</span>
+      </a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
     </nav>
   </header>
 
+  <div class="hero-wrap" id="top">
+    <!-- ========== INTRO ========== -->
+    <section class="hero">
+      <p class="eyebrow"><span class="dari" lang="fa" dir="rtl">خوش آمدید</span><span class="eyebrow-sep">·</span>welcome</p>
+      <h1>Zayd Yusufi</h1>
+      <p class="tagline">Electrical &amp; Computer Engineering student building on Linux, cloud infrastructure, and automation.</p>
+      <p class="lede">
+        I'm a DevOps/IT Research Assistant at the
+        <a href="https://lasp.colorado.edu/" target="_blank" rel="noopener">Laboratory for Atmospheric and Space Physics</a>
+        (LASP), where I work in production Linux environments with CI/CD pipelines and infrastructure-as-code.
+        Outside of work I run a self-directed homelab — a Terraform–Ansible–Proxmox provisioning workflow with
+        containerized services and Prometheus/Grafana monitoring — and I come at all of it with a hardware background
+        from a NASA-affiliated instrumentation project, circuit design, and digital logic.
+      </p>
+      <p class="meta">Parker, Colorado &nbsp;·&nbsp; B.S. ECE, CU Boulder, expected May 2028</p>
+      <div class="hero-links">
+        <a href="https://github.com/rumi-1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/zayd-yusufi-110a1823a" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:zayd.yusufi@colorado.edu">Email</a>
+      </div>
+    </section>
+  </div>
+
   <main>
-    <p>Testing out intiial deployment</p>
+    <div class="divider" aria-hidden="true">
+      <span class="line"></span>
+      <svg class="divider-star"><use href="#star8"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience">
+      <h2><span class="num">۰۱</span>Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Laboratory for Atmospheric and Space Physics (LASP)</h3>
+          <span class="dates">Jul 2026 – Present</span>
+        </div>
+        <p class="role">DevOps/IT Research Assistant · Boulder, CO</p>
+        <ul>
+          <li>Built a self-directed homelab extending the team's practices: provisioned Docker containers and configured services through a Terraform–Ansible–Proxmox workflow, wrote reusable Ansible roles, deployed a Prometheus/Grafana monitoring stack, and validated automation idempotency through repeated playbook runs.</li>
+          <li>Use AI tooling throughout to draft and review playbooks, troubleshoot configuration, and sanity-check setup — validating generated output against the target configuration and confirming behavior through repeated runs rather than accepting it as written.</li>
+          <li>Work alongside the DevOps, systems administration, and IT teams in production Linux environments, covering version control workflows and CI/CD pipelines (Jenkins, Bitbucket).</li>
+          <li>Apply Ansible and Terraform for infrastructure-as-code and AWS fundamentals supporting reliable, production-grade engineering environments.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Colorado Space Grant Consortium</h3>
+          <span class="dates">Sep 2025 – Jan 2026</span>
+        </div>
+        <p class="role">Student Hardware/Software Engineer · Boulder, CO</p>
+        <ul>
+          <li>Assembled, tested, and validated microcontroller-based sensor hardware for the NASA STELLA environmental instrumentation project, developing and debugging Arduino firmware for sensor integration and data logging.</li>
+          <li>Performed soldering and hardware bring-up, collaborating with a multidisciplinary team to prototype, test, and iterate on environmental sensing hardware.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Team GeoSight</h3>
+          <span class="dates">Aug 2024 – Jan 2025</span>
+        </div>
+        <p class="role">Project Lead · Boulder, CO</p>
+        <ul>
+          <li>Led development of an Arduino-based tactile campus map, integrating audio modules, push-button inputs, and embedded electronics within modular 3D-printed hardware.</li>
+          <li>Used electronics lab equipment (Analog Discovery 2/Waveforms, oscilloscope, multimeter) for circuit prototyping, signal debugging, and hardware validation; directed project planning and team coordination from concept through delivery.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects">
+      <h2><span class="num">۰۲</span>Projects</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Homelab Provisioning Workflow</h3>
+          <p>Terraform–Ansible–Proxmox pipeline that provisions VMs and Docker containers from code, with reusable Ansible roles and a Prometheus/Grafana monitoring stack. Idempotency validated through repeated playbook runs.</p>
+          <p class="tags"><span>Terraform</span><span>Ansible</span><span>Proxmox</span><span>Docker</span><span>Grafana</span></p>
+        </article>
+
+        <article class="card">
+          <h3>Building Thermal System Modeling</h3>
+          <p>Modeled indoor temperature dynamics using Newton's Law of Cooling, simulating environmental effects in MATLAB via Runge-Kutta numerical methods; evaluated control impacts and safety thresholds through multi-day, data-driven simulations.</p>
+          <p class="tags"><span>MATLAB</span><span>Runge-Kutta</span><span>Simulation</span></p>
+        </article>
+
+        <article class="card">
+          <h3>Matrix-Based Image Processing</h3>
+          <p>MATLAB functions for image processing via matrix operations: color channel manipulation, grayscale conversion, exposure adjustment, geometric transforms, and Discrete Sine Transform compression.</p>
+          <p class="tags"><span>MATLAB</span><span>Linear Algebra</span><span>DST</span></p>
+        </article>
+
+        <article class="card">
+          <h3>Tactile Campus Map</h3>
+          <p>Arduino-based accessible map with audio feedback and push-button navigation, housed in modular 3D-printed hardware. Led the GeoSight team from concept to delivery.</p>
+          <p class="tags"><span>Arduino</span><span>Embedded</span><span>3D Printing</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills">
+      <h2><span class="num">۰۳</span>Skills</h2>
+      <dl class="skills">
+        <div><dt>Cloud &amp; DevOps</dt><dd>AWS, CI/CD (Jenkins, Bitbucket), Ansible, Terraform, Docker, Proxmox, Prometheus/Grafana</dd></div>
+        <div><dt>Systems &amp; Hardware</dt><dd>Linux, Windows, macOS, Git, PC building &amp; assembly, OS/driver installation, network configuration</dd></div>
+        <div><dt>Programming</dt><dd>Python, C/C++, Java, MATLAB, SQL (MySQL), Shell scripting, AI-assisted development (Claude Code)</dd></div>
+        <div><dt>Data &amp; Analysis</dt><dd>MATLAB numerical &amp; statistical modeling, matrix-based data/image processing, Runge-Kutta simulation methods</dd></div>
+        <div><dt>Circuits &amp; Hardware</dt><dd>Circuit analysis and design, analog &amp; digital electronics, transistor device behavior, signal generation, soldering &amp; hardware assembly</dd></div>
+        <div><dt>Debug &amp; Lab Equipment</dt><dd>Oscilloscope, multimeter/voltmeter, logic analyzer, Analog Discovery 2 / Waveforms</dd></div>
+      </dl>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education">
+      <h2><span class="num">۰۴</span>Education</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>University of Colorado Boulder</h3>
+          <span class="dates">Expected May 2028</span>
+        </div>
+        <p class="role">B.S., Electrical &amp; Computer Engineering · Boulder, CO</p>
+        <ul>
+          <li>Fall 2026: Circuits as Systems, Electronics Design Lab, Programming Digital Systems, Embedded Software Engineering.</li>
+          <li>Completed: Digital Logic, Analog Circuits, Data Structures, Databases (MySQL), Linear Algebra, Differential Equations, Physics (E&amp;M), Calculus II/III.</li>
+          <li>Course Assistant, Databases (MySQL) — current.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>National Yang Ming Chiao Tung University</h3>
+          <span class="dates">Completed 2026</span>
+        </div>
+        <p class="role">Semester Exchange, Electronics &amp; Electrical Engineering · Hsinchu, Taiwan</p>
+        <ul>
+          <li>Applied systems-level engineering thinking to network design in Public Transport Design &amp; Operation; examined semiconductor industry dynamics in Chip Society &amp; Politics.</li>
+        </ul>
+      </article>
+
+      <h3 class="sub">Certifications</h3>
+      <ul class="certs">
+        <li>Fundamentals of Ansible — Red Hat</li>
+        <li>AWS Cloud Technical Essentials — Amazon</li>
+        <li>Google AI Essentials — Google</li>
+        <li>Claude Code in Action — Anthropic</li>
+        <li>Introduction to Programming Using Python — MITx</li>
+        <li class="in-progress">Machine Learning Specialization — Stanford University &amp; DeepLearning.AI <em>(in progress)</em></li>
+      </ul>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <span class="line"></span>
+      <svg class="divider-star"><use href="#star8"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="contact">
+      <h2><span class="num">۰۵</span>Contact</h2>
+      <p>The best way to reach me is email. I'm always happy to talk infrastructure, homelabs, or hardware.</p>
+      <p class="contact-links">
+        <a href="mailto:zayd.yusufi@colorado.edu">zayd.yusufi@colorado.edu</a>
+        <a href="https://github.com/rumi-1" target="_blank" rel="noopener">github.com/rumi-1</a>
+        <a href="https://linkedin.com/in/zayd-yusufi-110a1823a" target="_blank" rel="noopener">linkedin.com/in/zayd-yusufi</a>
+      </p>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 Rumi</p>
+  <footer class="site-footer">
+    <div class="border-bottom" aria-hidden="true"></div>
+    <p>&copy; <span id="year">2026</span> Zayd Yusufi &nbsp;·&nbsp; Parker, Colorado</p>
+    <p class="dari-footer" lang="fa" dir="rtl">با سپاس از بازدید شما</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
