@@ -27,7 +27,6 @@
 
   --link: var(--lapis);
   --accent: var(--terracotta);
-  --pattern-opacity: .055;
 }
 
 :root[data-theme="dark"] {
@@ -43,8 +42,6 @@
   --turquoise: #5fc9bc;
   --terracotta: #e8935c;
   --saffron: #e6b95b;
-
-  --pattern-opacity: .06;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,8 +58,6 @@
     --turquoise: #5fc9bc;
     --terracotta: #e8935c;
     --saffron: #e6b95b;
-
-    --pattern-opacity: .06;
   }
 }
 
@@ -188,7 +183,7 @@ li::marker { color: var(--turquoise); }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: .95rem;
   font-size: .92rem;
 }
 .nav-links a {
@@ -227,33 +222,10 @@ li::marker { color: var(--turquoise); }
 
 /* ---------- hero ---------- */
 
-.hero-wrap { position: relative; }
 .hero {
-  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3.5rem 1.25rem 2.5rem;
-}
-/* faint eight-point star tessellation, like a Timurid tile field */
-.hero-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: var(--pattern-opacity);
-  pointer-events: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 100 100'><path d='M50 4 L61 30 L88 18 L76 45 L100 50 L76 55 L88 82 L61 70 L50 96 L39 70 L12 82 L24 55 L0 50 L24 45 L12 18 L39 30 Z' fill='none' stroke='%2322508f' stroke-width='2.5'/></svg>");
-  background-size: 72px 72px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-}
-:root[data-theme="dark"] .hero-wrap::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 100 100'><path d='M50 4 L61 30 L88 18 L76 45 L100 50 L76 55 L88 82 L61 70 L50 96 L39 70 L12 82 L24 55 L0 50 L24 45 L12 18 L39 30 Z' fill='none' stroke='%238db3ea' stroke-width='2.5'/></svg>");
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .hero-wrap::before {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 100 100'><path d='M50 4 L61 30 L88 18 L76 45 L100 50 L76 55 L88 82 L61 70 L50 96 L39 70 L12 82 L24 55 L0 50 L24 45 L12 18 L39 30 Z' fill='none' stroke='%238db3ea' stroke-width='2.5'/></svg>");
-  }
 }
 
 .eyebrow {
@@ -382,6 +354,44 @@ li::marker { color: var(--turquoise); }
 .skills dt { font-weight: 600; font-size: .95rem; color: var(--ink); }
 .skills dd { margin: 0; color: var(--ink-soft); font-size: .97rem; }
 
+/* ---------- languages ---------- */
+
+.languages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.languages li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: .9rem;
+  margin: 0;
+  padding: .65rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.languages li:last-child { border-bottom: none; }
+
+.lang-name { font-size: 1rem; color: var(--ink); }
+/* endonym in its own script, the way the eyebrow and footer carry Dari */
+.lang-native { margin-left: .5rem; font-size: .9rem; color: var(--ink-mute); }
+.lang-level {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* three dots: one lit per proficiency step, echoing the level word */
+.lang-dots { display: inline-flex; align-items: center; align-self: center; gap: .3rem; }
+.lang-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--rule);
+}
+.lang-dots span.on { background: var(--turquoise); }
+
 /* ---------- education extras ---------- */
 
 h3.sub {
@@ -426,6 +436,10 @@ h3.sub {
   h1 { font-size: 2.1rem; }
   .hero { padding-top: 2.5rem; }
   .nav-links { gap: .7rem; font-size: .85rem; }
-  .nav-links a:nth-child(3), .nav-links a:nth-child(4) { display: none; } /* hide Skills/Education on phones */
+  .nav-links a:nth-child(3), .nav-links a:nth-child(4),
+  .nav-links a:nth-child(5) { display: none; } /* hide Skills/Education/Languages on phones */
   .skills > div { grid-template-columns: 1fr; gap: .2rem; }
+  .languages li { grid-template-columns: 1fr auto; row-gap: .1rem; column-gap: .75rem; }
+  .lang-level { grid-column: 1; }
+  .lang-dots { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 }

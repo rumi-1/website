@@ -45,6 +45,7 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
         <a href="#contact">Contact</a>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -54,28 +55,26 @@
     </nav>
   </header>
 
-  <div class="hero-wrap" id="top">
-    <!-- ========== INTRO ========== -->
-    <section class="hero">
-      <p class="eyebrow"><span class="dari" lang="fa" dir="rtl">خوش آمدید</span><span class="eyebrow-sep">·</span>welcome</p>
-      <h1>Zayd Yusufi</h1>
-      <p class="tagline">Electrical &amp; Computer Engineering student building on Linux, cloud infrastructure, and automation.</p>
-      <p class="lede">
-        I'm a DevOps/IT Research Assistant at the
-        <a href="https://lasp.colorado.edu/" target="_blank" rel="noopener">Laboratory for Atmospheric and Space Physics</a>
-        (LASP), where I work in production Linux environments with CI/CD pipelines and infrastructure-as-code.
-        Outside of work I run a self-directed homelab — a Terraform–Ansible–Proxmox provisioning workflow with
-        containerized services and Prometheus/Grafana monitoring — and I come at all of it with a hardware background
-        from a NASA-affiliated instrumentation project, circuit design, and digital logic.
-      </p>
-      <p class="meta">Parker, Colorado &nbsp;·&nbsp; B.S. ECE, CU Boulder, expected May 2028</p>
-      <div class="hero-links">
-        <a href="https://github.com/rumi-1" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/zayd-yusufi-110a1823a" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:zayd.yusufi@colorado.edu">Email</a>
-      </div>
-    </section>
-  </div>
+  <!-- ========== INTRO ========== -->
+  <section class="hero" id="top">
+    <p class="eyebrow"><span class="dari" lang="fa" dir="rtl">خوش آمدید</span><span class="eyebrow-sep">·</span>welcome</p>
+    <h1>Zayd Yusufi</h1>
+    <p class="tagline">Electrical &amp; Computer Engineering student building on Linux, cloud infrastructure, and automation.</p>
+    <p class="lede">
+      I'm a DevOps/IT Research Assistant at the
+      <a href="https://lasp.colorado.edu/" target="_blank" rel="noopener">Laboratory for Atmospheric and Space Physics</a>
+      (LASP), where I work in production Linux environments with CI/CD pipelines and infrastructure-as-code.
+      Outside of work I run a self-directed homelab — a Terraform–Ansible–Proxmox provisioning workflow with
+      containerized services and Prometheus/Grafana monitoring — and I come at all of it with a hardware background
+      from a NASA-affiliated instrumentation project, circuit design, and digital logic.
+    </p>
+    <p class="meta">Parker, Colorado &nbsp;·&nbsp; B.S. ECE, CU Boulder, expected May 2028</p>
+    <div class="hero-links">
+      <a href="https://github.com/rumi-1" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/zayd-yusufi-110a1823a" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:zayd.yusufi@colorado.edu">Email</a>
+    </div>
+  </section>
 
   <main>
     <div class="divider" aria-hidden="true">
@@ -116,6 +115,19 @@
 
       <article class="entry">
         <div class="entry-head">
+          <h3>Google Developer Groups</h3>
+          <span class="dates">Sep 2024 – Aug 2025</span>
+        </div>
+        <p class="role">Vice President · Boulder, CO</p>
+        <ul>
+          <li>Facilitated team collaboration and supported club activities for the Google Developers Student Club.</li>
+          <li>Managed faculty-to-student communications, creating chat rooms and flyers using Discord and Canva.</li>
+          <li>Coordinated events featuring speakers such as Alex Castillo, CTO of Neurosity, to enhance quality and engagement.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
           <h3>Team GeoSight</h3>
           <span class="dates">Aug 2024 – Jan 2025</span>
         </div>
@@ -136,6 +148,12 @@
           <h3>Homelab Provisioning Workflow</h3>
           <p>Terraform–Ansible–Proxmox pipeline that provisions VMs and Docker containers from code, with reusable Ansible roles and a Prometheus/Grafana monitoring stack. Idempotency validated through repeated playbook runs.</p>
           <p class="tags"><span>Terraform</span><span>Ansible</span><span>Proxmox</span><span>Docker</span><span>Grafana</span></p>
+        </article>
+
+        <article class="card">
+          <h3>FPGA Musical Keyboard &amp; Audio Synthesizer</h3>
+          <p>Designed a modular FPGA musical keyboard using Verilog modules for debouncing, note logic, song sequencing, and audio mixing. Implemented Direct Digital Synthesis (DDS) with a 48&nbsp;kHz sample tick derived from a 100&nbsp;MHz system clock and produced audio through a high-speed PWM output routed to the FPGA DAC interface.</p>
+          <p class="tags"><span>Verilog</span><span>FPGA</span><span>DDS</span><span>PWM Audio</span></p>
         </article>
 
         <article class="card">
@@ -210,6 +228,38 @@
       </ul>
     </section>
 
+    <!-- ========== LANGUAGES ========== -->
+    <section id="languages">
+      <h2><span class="num">۰۵</span>Languages</h2>
+      <ul class="languages">
+        <li>
+          <span class="lang-name">English</span>
+          <span class="lang-level">Native</span>
+          <span class="lang-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span></span>
+        </li>
+        <li>
+          <span class="lang-name">Tajiki Persian<span class="lang-native" lang="tg">тоҷикӣ</span></span>
+          <span class="lang-level">Intermediate</span>
+          <span class="lang-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span></span>
+        </li>
+        <li>
+          <span class="lang-name">Spanish<span class="lang-native" lang="es">Español</span></span>
+          <span class="lang-level">Intermediate</span>
+          <span class="lang-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span></span>
+        </li>
+        <li>
+          <span class="lang-name">Chinese<span class="lang-native" lang="zh">中文</span></span>
+          <span class="lang-level">Beginner</span>
+          <span class="lang-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></span>
+        </li>
+        <li>
+          <span class="lang-name">Japanese<span class="lang-native" lang="ja">日本語</span></span>
+          <span class="lang-level">Beginner</span>
+          <span class="lang-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></span>
+        </li>
+      </ul>
+    </section>
+
     <div class="divider" aria-hidden="true">
       <span class="line"></span>
       <svg class="divider-star"><use href="#star8"/></svg>
@@ -218,7 +268,7 @@
 
     <!-- ========== CONTACT ========== -->
     <section id="contact" class="contact">
-      <h2><span class="num">۰۵</span>Contact</h2>
+      <h2><span class="num">۰۶</span>Contact</h2>
       <p>The best way to reach me is email. I'm always happy to talk infrastructure, homelabs, or hardware.</p>
       <p class="contact-links">
         <a href="mailto:zayd.yusufi@colorado.edu">zayd.yusufi@colorado.edu</a>
